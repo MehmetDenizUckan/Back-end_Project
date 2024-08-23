@@ -32,6 +32,18 @@
     <link rel="icon" href="static/images/favicon.png">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Display flashed messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
     
     <!-- Preloader -->
 	<div class="spinner-wrapper">
@@ -91,7 +103,7 @@
                     </li>
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="log-in.html">LOG IN</a>
+                    <a class="btn-outline-sm" href="{{ url_for('login') }}">LOG IN</a>
                 </span>
             </div>
         </div> <!-- end of container -->
@@ -105,10 +117,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Log In</h1>
-                   <p>You don't have a password? Then please <a class="white" href="sign-up.html">Sign Up</a></p> 
+                    <p>You don't have a password? Then please <a class="white" href="{{ url_for('signup') }}">Sign Up</a></p>
                     <!-- Sign Up Form id="logInForm" data-toggle="validator" data-focus="false"  -->
                     <div class="form-container">
-                        <form action="{{ url_for('login1') }}" method="post">
+                        <form action="{{ url_for('login') }}" method="post">
                             <div class="form-group">
                                 <input type="email" class="form-control-input" id="email"  name="email"  value="" required>
                                 <label class="label-control" for="email">Email</label>
