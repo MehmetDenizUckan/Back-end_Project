@@ -1,3 +1,13 @@
-C:\Users\UCKAN\Desktop\Coding\Python_Codes\Back-end Project\config.py
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+.env
+*.db
+.DS_Store
+
+# Ignore configuration file
+config.py
