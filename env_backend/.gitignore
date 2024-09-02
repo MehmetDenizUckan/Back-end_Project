@@ -1,4 +1,5 @@
-__pycache__/
+# created by virtualenv automatically
+*__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -11,3 +12,4 @@ ENV/
 
 # Ignore configuration file
 config.py
+

@@ -529,3 +529,7 @@
 2024-09-02 16:28:47,205 - INFO - 127.0.0.1 - - [02/Sep/2024 16:28:47] "[36mGET /static/js/jquery.magnific-popup.js HTTP/1.1[0m" 304 -
 2024-09-02 16:28:47,221 - INFO - 127.0.0.1 - - [02/Sep/2024 16:28:47] "[36mGET /static/js/validator.min.js HTTP/1.1[0m" 304 -
 2024-09-02 16:28:47,229 - INFO - 127.0.0.1 - - [02/Sep/2024 16:28:47] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2024-09-02 17:17:32,777 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 17:17:32,777 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 17:17:32,785 - INFO -  * Restarting with stat
