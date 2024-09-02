@@ -603,3 +603,94 @@
 2024-09-02 20:52:00,068 - INFO - 127.0.0.1 - - [02/Sep/2024 20:52:00] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 -
 2024-09-02 20:52:00,068 - INFO - 127.0.0.1 - - [02/Sep/2024 20:52:00] "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 -
 2024-09-02 20:52:00,103 - INFO - 127.0.0.1 - - [02/Sep/2024 20:52:00] "[33mGET /Static/images/testimonial-3.jpg HTTP/1.1[0m" 404 -
+2024-09-02 21:14:42,527 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 21:14:42,527 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 21:14:42,530 - INFO -  * Restarting with stat
+2024-09-02 21:14:44,145 - WARNING -  * Debugger is active!
+2024-09-02 21:14:44,153 - INFO -  * Debugger PIN: 270-347-819
+2024-09-02 21:48:28,654 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-02 21:48:28,655 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-02 21:48:28,658 - INFO -  * Restarting with stat
+2024-09-02 21:48:29,840 - WARNING -  * Debugger is active!
+2024-09-02 21:48:29,848 - INFO -  * Debugger PIN: 709-843-054
+2024-09-02 21:48:50,961 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:50] "GET /sign-up HTTP/1.1" 200 -
+2024-09-02 21:48:51,186 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/css/bootstrap.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,187 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/images/logo2.png HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,188 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/css/fontawesome-all.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,188 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/css/swiper.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,190 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,192 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/css/magnific-popup.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,257 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/jquery.easing.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,258 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,273 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,277 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/jquery.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,282 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/jquery.magnific-popup.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,283 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/swiper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,472 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/validator.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:51,473 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:51] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,857 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "GET /login HTTP/1.1" 200 -
+2024-09-02 21:48:53,886 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/css/bootstrap.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,902 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/css/fontawesome-all.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,902 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/css/swiper.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,903 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/css/magnific-popup.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,911 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,913 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/images/logo2.png HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,918 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/jquery.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,922 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,927 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,934 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/jquery.easing.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,941 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/swiper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,946 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/jquery.magnific-popup.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,954 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/validator.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:53,957 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:53] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,934 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-09-02 21:48:57,939 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "GET /login HTTP/1.1" 200 -
+2024-09-02 21:48:57,959 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/css/bootstrap.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,965 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/css/fontawesome-all.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,969 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/css/swiper.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,974 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/css/magnific-popup.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,979 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,983 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/images/logo2.png HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,987 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/js/jquery.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,991 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:57,996 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:57] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:58,001 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:58] "[36mGET /static/js/jquery.easing.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:58,007 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:58] "[36mGET /static/js/swiper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:58,011 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:58] "[36mGET /static/js/jquery.magnific-popup.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:58,015 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:58] "[36mGET /static/js/validator.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:48:58,019 - INFO - 127.0.0.1 - - [02/Sep/2024 21:48:58] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,213 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-09-02 21:49:04,257 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "GET /index HTTP/1.1" 200 -
+2024-09-02 21:49:04,323 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/css/bootstrap.css HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,353 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/css/fontawesome-all.css HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,354 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/css/swiper.css HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,360 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/css/magnific-popup.css HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,363 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,366 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/logo2.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,370 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/header-software-app.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,373 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/description-5.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,377 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/description-4.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,384 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/description-6.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,387 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/jquery.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,390 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,402 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,405 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/jquery.easing.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,411 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/swiper.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,418 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/jquery.magnific-popup.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,423 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/validator.min.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,430 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,434 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/features-1.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,440 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/features-2.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,447 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/features-3.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,452 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/details-lightbox.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,460 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/details.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,467 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/video-image.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,470 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/customer-logo-8.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,478 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/customer-logo-9.png HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,481 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/testimonial-1.jpg HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,487 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/images/testimonial-2.jpg HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,501 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[33mGET /Static/images/testimonial-3.jpg HTTP/1.1[0m" 404 -
+2024-09-02 21:49:04,554 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+2024-09-02 21:49:04,567 - INFO - 127.0.0.1 - - [02/Sep/2024 21:49:04] "[36mGET /static/webfonts/fa-brands-400.woff2 HTTP/1.1[0m" 304 -

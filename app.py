@@ -2,13 +2,11 @@
 from flask import Flask
 from routes import Routes
 from auth import Authentication
-from dotenv import load_dotenv
 from db import cleanup
 import os
 import atexit
 
-# load .env file
-load_dotenv()
+
 
 def create_app():
     app = Flask(__name__)
