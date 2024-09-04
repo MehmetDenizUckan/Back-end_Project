@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from db import LoginCredentials, MyDatabaseClass, DatabaseConnectionPool
 
 class Authentication:
@@ -19,13 +19,22 @@ class Authentication:
                     return redirect(url_for('login'))
                 
                 db_class = LoginCredentials(db_pool=self.db_pool, password=password, email=email)
+                user_db = MyDatabaseClass(self.db_pool, name=None, password=None, email=email, comments=None)
                 if db_class.authenticate_user(password):
                     flash('You have successfully logged in!', 'success')
-                    return redirect(url_for('index'))  # Redirect to home page
+                    session['user_email'] = email  # Store email in session
+                    username = user_db.get_user_name()                
+                    session['username'] = username  # Store username in session
+                    
+                    # Debug: Check session values
+                    test_email = session.get('user_email')
+                    test_username = session.get('username')
+                    print(f"Session email: {test_email}, Session username: {test_username}")
+                    
+                    return redirect(url_for('userpage'))  # Redirect to home page
                 else:
                     flash('Invalid email or password.', 'error')
                     return redirect(url_for('login'))
-        
             
             return render_template('log-in.html')
         
@@ -45,6 +54,7 @@ class Authentication:
                 db_class = MyDatabaseClass(db_pool=self.db_pool, name=name, password=password, email=email, comments=comments)      
                 if db_class.register_user() :
                     flash('You have successfully registered!', 'success')
+                    session['user_email'] = email
                     return redirect(url_for('login'))  # Redirect to login page
                 else:
                     flash('Email already exists.', 'error')

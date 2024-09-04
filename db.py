@@ -33,7 +33,8 @@ class LoginCredentials:
     def __init__(self, db_pool ,email, password):
         self.email = email
         self.db_pool = db_pool
-        self.password = generate_password_hash(password, "scrypt")  # Hash the password before storing
+        if password:            
+            self.password = generate_password_hash(password, "scrypt")  # Hash the password before storing
 
     def authenticate_user(self, text_password):
         conn = self.db_pool.get_conn()  # Get a connection from the pool
@@ -62,7 +63,7 @@ class MyDatabaseClass(LoginCredentials):
         super().__init__(db_pool, email, password)
         self.name = name
         self.comments = comments
-        self.img_url = 'test url'
+        self.img_url = None
 
     # Decorator for the methods
     def with_cursor(func):
@@ -88,10 +89,10 @@ class MyDatabaseClass(LoginCredentials):
                 return False
             else:
                 query = """
-                    INSERT INTO user_info (user_name, user_password, user_email, img_url, user_comments)
-                    VALUES (%s, %s, %s, %s, %s)
+                    INSERT INTO user_info (user_name, user_password, user_email, user_comments)
+                    VALUES (%s, %s, %s, %s)
                 """
-                db_cursor.execute(query, (self.name, self.password, self.email, self.img_url, self.comments))
+                db_cursor.execute(query, (self.name, self.password, self.email, self.comments))
                 db_cursor.connection.commit()  # Commit the transaction
                 return True
         except Exception as e:
@@ -112,7 +113,60 @@ class MyDatabaseClass(LoginCredentials):
             logging.error(error)
             db_cursor.connection.rollback()  # Rollback on exception
             return False
-
+        
+    @with_cursor
+    def save_img_url_to_db(self, db_cursor, image_url):
+        try:
+            query = """
+                UPDATE user_info 
+                SET img_url = %s 
+                WHERE user_email = %s
+            """
+            db_cursor.execute(query, (image_url, self.email))
+            db_cursor.connection.commit()
+            return True
+        except Exception as e:
+            error = f"Failed to update img url for {self.email}: {str(e)}"
+            logging.error(error)
+            db_cursor.connection.rollback()  # Rollback on exception
+            return False
+        
+    @with_cursor
+    def get_user_name(self, db_cursor):
+        try:
+            query = "SELECT user_name FROM user_info WHERE user_email = %s"
+            
+            db_cursor.execute(query, (self.email,))
+            result = db_cursor.fetchone()
+            if result:
+                return result[0]  # Return the user_name if found
+            else:
+                return None 
+    
+        except Exception as e:
+            error = f"Failed to update get user_names for {self.email}: {str(e)}"
+            logging.error(error)
+            db_cursor.connection.rollback()  # Rollback on exception
+            return False
+        
+    @with_cursor
+    def get_img_url(self, db_cursor):
+        try:
+            query = "SELECT img_url FROM user_info WHERE user_email = %s"
+            db_cursor.execute(query, (self.email,))
+            result = db_cursor.fetchone()
+            if result != None:
+                return result[0]
+            else:
+                return None
+               
+        except Exception as e:
+            error = f"Failed to update get user_names for {self.email}: {str(e)}"
+            logging.error(error)
+            db_cursor.connection.rollback()  # Rollback on exception
+            return False
+            
+            
         
         
 

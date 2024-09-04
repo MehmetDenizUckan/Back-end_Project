@@ -5,6 +5,7 @@ from auth import Authentication
 from db import cleanup
 import os
 import atexit
+from file_operations import FileClass
 
 
 
@@ -20,12 +21,12 @@ def create_app():
     # Initialize authentication
     Authentication(app)
     
+    # Initialize FileClass
+    FileClass(app, r'C:\Users\UCKAN\Desktop\test')
+    
     return app
 
-
-    
-    
-
+  
 def main():
     atexit.register(cleanup)
     web_app = create_app()

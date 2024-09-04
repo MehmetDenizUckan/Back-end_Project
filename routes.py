@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request, session
+from db import DatabaseConnectionPool, MyDatabaseClass
 
 class Routes:
     def __init__(self, app) -> None:
-        # Initialise the app to be used on routes
-        self.app = app
-        
+        # Initialize the app to be used on routes
+        self.app = app   
+        self.db_pool = DatabaseConnectionPool(minconn=1, maxconn=10)
         # Register routes
         self.implement_routes()
         
@@ -45,6 +46,27 @@ class Routes:
         def login1():
             return render_template('log-in.html')
         
+        @self.app.route('/userpage')
+        def userpage():     
+            print("user_page")
+            # Retrieve username and email from session
+            username = session.get('username')
+            email = session.get('user_email')
+            
+            print(f"Session email: {email}, Session username: {username}")
+            
+            # Redirect to login page if not logged in
+            if not username or not email:
+                return redirect(url_for('login1'))
+            
+            filename = request.args.get('filename')
+            img_url = self.check_img_url_exist(email)
+            print(img_url, "img_url")
+                     
+            return render_template('userpage.html', filename=filename, username=username, image_url=img_url)
+
+
+        
     def register_error_handlers(self):
         @self.app.errorhandler(404)
         def page_not_found(error):
@@ -53,3 +75,12 @@ class Routes:
         @self.app.errorhandler(500)
         def internal_server_error(error):
             return render_template('500.html'), 500
+
+    def check_img_url_exist(self, email):
+        print("img_url func")
+        if not email:
+            return None  # Return None if email is not present
+        
+        user_db = MyDatabaseClass(self.db_pool, name=None, password=None, email=email, comments=None)
+        img_url = user_db.get_img_url()
+        return img_url if img_url else None
