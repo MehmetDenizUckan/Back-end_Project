@@ -3,6 +3,7 @@ import logging
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from psycopg2 import pool
+from config import Config
 
 # Configure the logging
 logging.basicConfig(filename='userDB_errors.txt', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -12,12 +13,10 @@ db_pool = None
 class DatabaseConnectionPool:
     def __init__(self, minconn, maxconn):
         global db_pool
-        self.pool = psycopg2.pool.SimpleConnectionPool(minconn, maxconn,
-                                                       dbname="user_db",
-                                                       user="postgres",
-                                                       password="postresql.2024",
-                                                       host="localhost",
-                                                       port="5432")
+        self.pool = psycopg2.pool.SimpleConnectionPool(
+            minconn, maxconn,
+            dsn=Config.DATABASE_URL  # Dynamically use the database URL from config
+        )
 
     def get_conn(self):
         return self.pool.getconn()

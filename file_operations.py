@@ -63,7 +63,6 @@ class FileClass:
                     # Retrieve username from session
                     username = session.get('username')
                     
-                    print(username)
                        
                     # Pass the image URL to the template
                     return render_template('userpage.html', filename=filename, image_url=image_url, username = username)

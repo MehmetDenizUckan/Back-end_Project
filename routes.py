@@ -51,8 +51,7 @@ class Routes:
             # Retrieve username and email from session
             username = session.get('username')
             email = session.get('user_email')
-            
-            
+    
             # Redirect to login page if not logged in
             if not username or not email:
                 return redirect(url_for('login1'))

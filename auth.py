@@ -26,10 +26,6 @@ class Authentication:
                     username = user_db.get_user_name()                
                     session['username'] = username  # Store username in session
                     
-                    # Debug: Check session values
-                    test_email = session.get('user_email')
-                    test_username = session.get('username')
-                    print(f"Session email: {test_email}, Session username: {test_username}")
                     
                     return redirect(url_for('userpage'))  # Redirect to home page
                 else:
