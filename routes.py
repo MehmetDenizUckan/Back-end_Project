@@ -48,12 +48,10 @@ class Routes:
         
         @self.app.route('/userpage')
         def userpage():     
-            print("user_page")
             # Retrieve username and email from session
             username = session.get('username')
             email = session.get('user_email')
             
-            print(f"Session email: {email}, Session username: {username}")
             
             # Redirect to login page if not logged in
             if not username or not email:
@@ -61,7 +59,6 @@ class Routes:
             
             filename = request.args.get('filename')
             img_url = self.check_img_url_exist(email)
-            print(img_url, "img_url")
                      
             return render_template('userpage.html', filename=filename, username=username, image_url=img_url)
 
@@ -77,7 +74,6 @@ class Routes:
             return render_template('500.html'), 500
 
     def check_img_url_exist(self, email):
-        print("img_url func")
         if not email:
             return None  # Return None if email is not present
         
