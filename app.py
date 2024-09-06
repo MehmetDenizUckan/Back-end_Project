@@ -9,6 +9,7 @@ from file_operations import FileClass
 
 
 
+
 def create_app():
     app = Flask(__name__)
     
@@ -21,19 +22,29 @@ def create_app():
     # Initialize authentication
     Authentication(app)
     
-    # Initialize FileClass
-    FileClass(app, r'C:\Users\UCKAN\Desktop\test')
+    # For local testing, use a relative path or an environment variable
+    file_path = r'C:\Users\UCKAN\Desktop\test' if os.getenv('FLASK_ENV') == 'development' else 'path for the bucket'
+    FileClass(app, file_path)
     
     return app
 
   
-def main():
+
+
+def local_main():
     atexit.register(cleanup)
-    web_app = create_app()
-    if __name__ == "__main__":
-        web_app.run(debug=True)
+    local_app = create_app()
+    local_app.run(debug=True)
+
+
+def server_main():
+    return create_app() 
     
-
-# Run the app        
-main()
-
+   
+    
+if __name__ == "__main__":
+    # Determine environment and run accordingly
+    if os.getenv('FLASK_ENV') == 'development':
+        local_main()
+    else:
+        server_main()
