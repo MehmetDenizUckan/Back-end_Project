@@ -16,7 +16,7 @@ class DatabaseConnectionPool:
         self.pool = psycopg2.pool.SimpleConnectionPool(
             minconn, maxconn,
             dsn=Config.DATABASE_URL,  # Dynamically use the database URL from config
-            ssl_mode= 'require'
+            sslmode='require'         # Ensure SSL mode is required
         )
 
     def get_conn(self):
