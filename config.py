@@ -25,7 +25,6 @@ class Config:
 
     # Append sslmode=require for Heroku's PostgreSQL connection
     if DATABASE_URL.startswith('postgres://'):
-        DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)  # Ensure correct URI scheme
-        DATABASE_URL += '?sslmode=require'
+        DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)  # Ensure correct URI scheme    
     else:
         FLASK_ENV = os.getenv('FLASK_ENV', 'development')
