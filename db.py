@@ -15,6 +15,7 @@ class DatabaseConnectionPool:
         global db_pool
         self.ssl_requirement = Config.FLASK_ENV
         self.ssl_mode = 'require' if self.ssl_requirement == 'production' else 'disable'
+        print(self.ssl_mode)
         self.pool = pool.SimpleConnectionPool(
             minconn, maxconn,
             dsn=Config.DATABASE_URL, # Dynamically use the database URL from config

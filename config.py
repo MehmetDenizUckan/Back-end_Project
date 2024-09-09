@@ -27,6 +27,5 @@ class Config:
     if DATABASE_URL.startswith('postgres://'):
         DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)  # Ensure correct URI scheme
         DATABASE_URL += '?sslmode=require'
-
-    
-    FLASK_ENV = os.getenv('FLASK_ENV', 'development')
+    else:
+        FLASK_ENV = os.getenv('FLASK_ENV', 'development')
