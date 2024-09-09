@@ -1,30 +1,27 @@
 import os
-
-def load_env_file_bc_dotenv_doesnt_work(filepath = 'local_project.env'):
-    try:
-        with open(filepath) as file:
-            for line in file:
-                line = line.strip()
-                if line and not line.startswith('#'):
-                    key, value = line.split('=', 1)
-                    os.environ[key] = value
-    except FileNotFoundError:
-        print(f"Warning: {filepath} file not found. Skipping environment loading.")
-    
-
-load_env_file_bc_dotenv_doesnt_work()
+from urllib.parse import urlparse, urlunparse
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
 
     # Local database URL for development/testing
-    LOCAL_DATABASE_URL = 'postgresql://postgres:postresql.2024@localhost:5432/user_db'
+    LOCAL_DATABASE_URL = 'postgresql://postgres:postgresql.2024@localhost:5432/user_db'
 
     # Default to the DATABASE_URL from the environment (used in production/server)
     DATABASE_URL = os.getenv('DATABASE_URL', LOCAL_DATABASE_URL)
 
-    # Append sslmode=require for Heroku's PostgreSQL connection
-    if DATABASE_URL.startswith('postgres://'):
-        DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)  # Ensure correct URI scheme    
+    # Parse the URL to modify its parameters
+    parsed_url = urlparse(DATABASE_URL)
+    query_params = parsed_url.query
+
+    if os.getenv('FLASK_ENV') == 'production':
+        # Ensure SSL mode is required in production
+        query_params = 'sslmode=require'
     else:
-        FLASK_ENV = os.getenv('FLASK_ENV', 'development')
+        # Disable SSL mode for local development
+        query_params = 'sslmode=disable'
+
+    # Reconstruct the URL with updated query parameters
+    DATABASE_URL = urlunparse(parsed_url._replace(query=query_params))
+
+    FLASK_ENV = os.getenv('FLASK_ENV', 'development')
