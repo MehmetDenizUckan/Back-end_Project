@@ -13,7 +13,7 @@ db_pool = None
 class DatabaseConnectionPool:
     def __init__(self, minconn, maxconn):
         global db_pool
-        self.ssl_mode = 'disable' if Config.FLASK_ENV == 'development' else self.ssl_mode = 'require'           
+        self.ssl_mode = 'disable' if Config.FLASK_ENV == 'development' else 'require'           
         self.pool = pool.SimpleConnectionPool(
             minconn, maxconn,
             dsn=Config.DATABASE_URL, # Dynamically use the database URL from config
