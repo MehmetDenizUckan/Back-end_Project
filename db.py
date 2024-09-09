@@ -13,10 +13,12 @@ db_pool = None
 class DatabaseConnectionPool:
     def __init__(self, minconn, maxconn):
         global db_pool
-        self.pool = psycopg2.pool.SimpleConnectionPool(
+        self.ssl_requirement = Config.FLASK_ENV
+        self.ssl_mode = 'require' if self.ssl_requirement == 'production' else 'disable'
+        self.pool = pool.SimpleConnectionPool(
             minconn, maxconn,
-            dsn=Config.DATABASE_URL,  # Dynamically use the database URL from config
-            sslmode='require'         # Ensure SSL mode is required
+            dsn=Config.DATABASE_URL, # Dynamically use the database URL from config
+            sslmode=self.ssl_mode         # Ensure SSL mode is required
         )
 
     def get_conn(self):

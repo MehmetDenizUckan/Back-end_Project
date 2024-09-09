@@ -25,7 +25,6 @@ class FileClass:
                 # Check if the request has the file part
                 if 'file' not in request.files:
                     flash('No file part', 'error')
-                    # Retrieve username from session
                     username = session.get('username')
                     return redirect(url_for('userpage'))
                 
@@ -34,7 +33,6 @@ class FileClass:
                 # Check if the file has no name
                 if file.filename == '':
                     flash('No selected file', 'error')
-                    # Retrieve username from session
                     username = session.get('username')
                     return redirect(url_for('userpage'))
                 
@@ -60,7 +58,7 @@ class FileClass:
                     if not success:
                         flash('Failed to save image URL to the database', 'error')
                         
-                    # Retrieve username from session
+                    
                     username = session.get('username')
                     
                        

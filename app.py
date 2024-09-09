@@ -24,6 +24,7 @@ def create_app():
     
     # For local testing, use a relative path or an environment variable
     file_path = r'C:\Users\UCKAN\Desktop\test' if os.getenv('FLASK_ENV') == 'development' else 'path for the bucket'
+    print("env = ", os.getenv('FLASK_ENV'))
     FileClass(app, file_path)
     
     return app

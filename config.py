@@ -1,5 +1,19 @@
 import os
 
+def load_env_file_bc_dotenv_doesnt_work(filepath = 'local_project.env'):
+    try:
+        with open(filepath) as file:
+            for line in file:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    key, value = line.split('=', 1)
+                    os.environ[key] = value
+    except FileNotFoundError:
+        print(f"Warning: {filepath} file not found. Skipping environment loading.")
+    
+
+load_env_file_bc_dotenv_doesnt_work()
+
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
 
@@ -14,5 +28,5 @@ class Config:
         DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)  # Ensure correct URI scheme
         DATABASE_URL += '?sslmode=require'
 
-    # Flask environment (development or production)
-    FLASK_ENV = os.getenv('FLASK_ENV', 'production')
+    
+    FLASK_ENV = os.getenv('FLASK_ENV', 'development')
