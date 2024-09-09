@@ -9,11 +9,13 @@ class Routes:
         self.db_pool = DatabaseConnectionPool(minconn=1, maxconn=10)
         # Register routes
         self.implement_routes()
-        
         # Handle errors if encountered
         self.register_error_handlers()
     
     def implement_routes(self):
+        @self.app.route('/')
+        def root():
+            return render_template('index.html')
         @self.app.route('/article-details')
         def article_details():
             return render_template('article-details.html')
