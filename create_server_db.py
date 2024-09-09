@@ -15,7 +15,7 @@ cur.execute("""
         user_email VARCHAR(100) UNIQUE NOT NULL,
         user_password TEXT NOT NULL,
         user_comments VARCHAR(100),
-        img_url VARCHAR(255,
+        img_url VARCHAR(255),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 """)
