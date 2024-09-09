@@ -1,0 +1,63 @@
+2024-09-09 14:15:16,196 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 14:15:16,197 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 14:15:16,200 - INFO -  * Restarting with stat
+2024-09-09 14:15:17,378 - WARNING -  * Debugger is active!
+2024-09-09 14:15:17,387 - INFO -  * Debugger PIN: 709-843-054
+2024-09-09 14:19:17,227 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "GET /sign-up HTTP/1.1" 200 -
+2024-09-09 14:19:17,457 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/css/bootstrap.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,458 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/images/logo2.png HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,459 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/css/fontawesome-all.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,461 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,462 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/css/swiper.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,463 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/css/magnific-popup.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,529 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/jquery.easing.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,533 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,540 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,547 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/jquery.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,555 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/swiper.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,557 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/jquery.magnific-popup.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,586 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/validator.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:17,708 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:17] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:21,987 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:21] "GET /login HTTP/1.1" 200 -
+2024-09-09 14:19:22,008 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/css/bootstrap.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,017 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/css/fontawesome-all.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,021 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/css/swiper.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,024 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/css/magnific-popup.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,030 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,037 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/images/logo2.png HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,039 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/jquery.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,043 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,050 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,057 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/jquery.easing.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,064 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/swiper.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,073 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/jquery.magnific-popup.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,080 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/validator.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:22,086 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:22] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -
+2024-09-09 14:19:25,995 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-09-09 14:19:26,041 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "GET /userpage HTTP/1.1" 200 -
+2024-09-09 14:19:26,077 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:26,082 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "[36mGET /static/css/userpage.css HTTP/1.1[0m" 304 -
+2024-09-09 14:19:26,086 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "[36mGET /static/images/logo2.png HTTP/1.1[0m" 304 -
+2024-09-09 14:19:26,090 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "[36mGET /uploads/CATB.png HTTP/1.1[0m" 304 -
+2024-09-09 14:19:26,094 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "[33mGET /static/css/dashboard.css HTTP/1.1[0m" 404 -
+2024-09-09 14:19:26,099 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "[33mGET /static/js/dashboard.min.js HTTP/1.1[0m" 404 -
+2024-09-09 14:19:26,112 - INFO - 127.0.0.1 - - [09/Sep/2024 14:19:26] "[36mGET /static/js/userpage.min.js HTTP/1.1[0m" 304 -
+2024-09-09 14:34:40,793 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 14:34:40,794 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 14:34:40,796 - INFO -  * Restarting with stat
+2024-09-09 14:34:41,963 - WARNING -  * Debugger is active!
+2024-09-09 14:34:41,971 - INFO -  * Debugger PIN: 709-843-054
+2024-09-09 14:35:21,217 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 14:35:21,217 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 14:35:21,220 - INFO -  * Restarting with stat
+2024-09-09 14:35:22,397 - WARNING -  * Debugger is active!
+2024-09-09 14:35:22,404 - INFO -  * Debugger PIN: 709-843-054
+2024-09-09 14:42:48,688 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-09 14:42:48,689 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-09 14:42:48,692 - INFO -  * Restarting with stat
+2024-09-09 14:42:49,969 - WARNING -  * Debugger is active!
+2024-09-09 14:42:49,976 - INFO -  * Debugger PIN: 709-843-054

@@ -14,11 +14,11 @@ class DatabaseConnectionPool:
     def __init__(self, minconn, maxconn):
         global db_pool
         self.ssl_mode = 'require' if Config.DATABASE_URL.startswith('postgres://') else 'disable' 
-        print(self.ssl_mode)          
+        print(Config.DATABASE_URL)          
         self.pool = pool.SimpleConnectionPool(
             minconn, maxconn,
             dsn=Config.DATABASE_URL, # Dynamically use the database URL from config
-            sslmode='require'        # Ensure SSL mode is required
+            #sslmode=self.ssl_mode        # Ensure SSL mode is required
         )
 
     def get_conn(self):
