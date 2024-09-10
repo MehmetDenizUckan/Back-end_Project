@@ -24,10 +24,9 @@ class Authentication:
                     flash('You have successfully logged in!', 'success')
                     session['user_email'] = email  # Store email in session
                     username = user_db.get_user_name()                
-                    session['username'] = username  # Store username in session
+                    session['username'] = username  # Store username in session   
                     
-                    
-                    return redirect(url_for('userpage'))  # Redirect to home page
+                    return redirect(url_for('userpage'))  # Redirect to userpage page
                 else:
                     flash('Invalid email or password.', 'error')
                     return redirect(url_for('login'))
