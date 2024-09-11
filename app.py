@@ -39,6 +39,7 @@ def local_main():
 
 
 def server_main():
+    atexit.register(cleanup) 
     return create_app() 
     
    
