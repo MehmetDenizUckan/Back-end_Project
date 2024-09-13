@@ -1,1 +1,1 @@
-web: gunicorn app:create_app -- config config.Config
+web: gunicorn app:create_app('config.Config')
