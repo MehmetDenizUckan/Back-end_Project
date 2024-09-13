@@ -59,7 +59,8 @@ class Routes:
                 return redirect(url_for('login1'))
             
             filename = request.args.get('filename')
-            img_url = self.check_img_url_exist(email)
+            user_db = MyDatabaseClass(self.db_pool, email=email, password=None, name=None, comments=None)
+            img_url = user_db.get_img_url()
                      
             return render_template('userpage.html', filename=filename, username=username, image_url=img_url)
 
@@ -74,10 +75,3 @@ class Routes:
         def internal_server_error(error):
             return render_template('500.html'), 500
 
-    def check_img_url_exist(self, email):
-        if not email:
-            return None  # Return None if email is not present
-        
-        user_db = MyDatabaseClass(self.db_pool, name=None, password=None, email=email, comments=None)
-        img_url = user_db.get_img_url()
-        return img_url if img_url else None

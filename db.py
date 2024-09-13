@@ -11,32 +11,42 @@ logging.basicConfig(filename='userDB_errors.txt', level=logging.ERROR, format='%
 db_pool = None
 # Create a db connection pool 
 class DatabaseConnectionPool:
-    def __init__(self, minconn, maxconn):
+    _instance = None
+    def __new__(cls, minconn, maxconn) -> object:
+        if cls._instance is None:
+            cls._instance = super(DatabaseConnectionPool, cls).__new__(cls)
+            cls._instance.init(minconn, maxconn)
+        return cls._instance
+            
+    def init(self, minconn, maxconn):
         global db_pool
         self.ssl_mode = 'require' if Config.DATABASE_URL.startswith('postgres://') else 'disable' 
         print(Config.DATABASE_URL)          
-        self.pool = pool.SimpleConnectionPool(
+        self.db_pool = pool.SimpleConnectionPool(
             minconn, maxconn,
             dsn=Config.DATABASE_URL, # Dynamically use the database URL from config
             #sslmode=self.ssl_mode        # Ensure SSL mode is required
         )
 
     def get_conn(self):
-        return self.pool.getconn()
+        return self.db_pool.getconn()
 
     def put_conn(self, conn):
-        self.pool.putconn(conn)
+        print("Releasing connection back to pool...")
+        self.db_pool.putconn(conn)
+        print("Connection released.")
 
     def close_all(self):
-        self.pool.closeall()
+        self.db_pool.closeall()
 
 
 class LoginCredentials:
     def __init__(self, db_pool ,email, password):
         self.email = email
         self.db_pool = db_pool
-        if password:            
-            self.password = generate_password_hash(password, "scrypt")  # Hash the password before storing
+        if password:
+            self.password = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8) # hash the password
+
 
     def authenticate_user(self, text_password):
         conn = self.db_pool.get_conn()  # Get a connection from the pool
@@ -167,6 +177,7 @@ class MyDatabaseClass(LoginCredentials):
             logging.error(error)
             db_cursor.connection.rollback()  # Rollback on exception
             return False
+    
             
             
         

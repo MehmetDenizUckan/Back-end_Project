@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from flask import Flask
 from routes import Routes
 from auth import Authentication
@@ -7,46 +8,30 @@ import os
 import atexit
 from file_operations import FileClass
 
-
-
-
-def create_app():
+def create_app(config_path: str) -> Flask:
     app = Flask(__name__)
-    
-    # Configure the app (e.g., app.config.from_object('config.Config'))
-    app.config.from_object('config.Config')
-    
-    # Initialize routes
+    app.config.from_object(config_path)
     Routes(app)
-    
-    # Initialize authentication
     Authentication(app)
-    
-    # For local testing, use a relative path or an environment variable
-    file_path = r'C:\Users\UCKAN\Desktop\test' if os.getenv('FLASK_ENV') == 'development' else 'path for the bucket'
-    print("env = ", os.getenv('FLASK_ENV'))
-    FileClass(app, file_path)
-    
     return app
 
-  
-
-
-def local_main():
+def run_local_development():
+    """Run the app in local development mode"""
+    file_path = os.path.join(os.path.expanduser('~'), 'Desktop', 'test')
+    app = create_app('config.Config')
+    FileClass(app, file_path)
     atexit.register(cleanup)
-    local_app = create_app()
-    local_app.run(debug=True)
+    app.run(debug=True)
 
+def run_production():
+    """Run the app in production mode"""
+    app = create_app("config.Config")
+    bucket_path = os.getenv("BUCKET_PATH", "path for the bucket")
+    FileClass(app, bucket_path)
+    app.run()
 
-def server_main():
-    atexit.register(cleanup) 
-    return create_app() 
-    
-   
-    
 if __name__ == "__main__":
-    # Determine environment and run accordingly
     if os.getenv('FLASK_ENV') == 'development':
-        local_main()
+        run_local_development()
     else:
-        server_main()
+        run_production()

@@ -30,10 +30,8 @@ class Config:
     query_params = parsed_url.query
 
     if os.getenv('FLASK_ENV') == 'production':
-        # Ensure SSL mode is required in production
         query_params = 'sslmode=require'
     else:
-        # Disable SSL mode for local development
         query_params = 'sslmode=disable'
 
     # Reconstruct the URL with updated query parameters
