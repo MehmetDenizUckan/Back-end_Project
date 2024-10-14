@@ -4,12 +4,9 @@ from db import DatabaseConnectionPool, MyDatabaseClass
 
 class Routes:
     def __init__(self, app) -> None:
-        # Initialize the app to be used on routes
-        self.app = app   
+        self.app = app
         self.db_pool = DatabaseConnectionPool(minconn=1, maxconn=10)
-        # Register routes
         self.implement_routes()
-        # Handle errors if encountered
         self.register_error_handlers()
     
     def implement_routes(self):
@@ -54,7 +51,6 @@ class Routes:
             username = session.get('username')
             email = session.get('user_email')
     
-            # Redirect to login page if not logged in
             if not username or not email:
                 return redirect(url_for('login1'))
             

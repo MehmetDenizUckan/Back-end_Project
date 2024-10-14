@@ -25,7 +25,6 @@ class DatabaseConnectionPool:
         self.db_pool = pool.SimpleConnectionPool(
             minconn, maxconn,
             dsn=Config.DATABASE_URL, # Dynamically use the database URL from config
-            #sslmode=self.ssl_mode        # Ensure SSL mode is required
         )
 
     def get_conn(self):
@@ -49,14 +48,14 @@ class LoginCredentials:
 
 
     def authenticate_user(self, text_password):
-        conn = self.db_pool.get_conn()  # Get a connection from the pool
+        conn = self.db_pool.get_conn()  
         try:
             with conn.cursor() as db_cursor:
                 query = "SELECT user_password FROM user_info WHERE user_email = %s"
                 db_cursor.execute(query, (self.email,))
                 result = db_cursor.fetchone()
 
-                if result and check_password_hash(result[0], text_password):  # Compare with the stored hash
+                if result and check_password_hash(result[0], text_password): 
                     conn.commit()  # Commit if the authentication is successful
                     return True
                 else:
@@ -68,7 +67,7 @@ class LoginCredentials:
             conn.rollback()  # Rollback on exception
             return False
         finally:
-            self.db_pool.put_conn(conn)  # Return the connection to the pool
+            self.db_pool.put_conn(conn)  
 
 class MyDatabaseClass(LoginCredentials):
     def __init__(self, db_pool, name, password, email, comments):

@@ -36,4 +36,4 @@ class Config:
 
     # Reconstruct the URL with updated query parameters
     DATABASE_URL = urlunparse(parsed_url._replace(query=query_params))
-    FLASK_ENV = os.getenv('FLASK_ENV', 'development')
+    FLASK_ENV = os.getenv('FLASK_ENV', 'development')   
