@@ -69,6 +69,7 @@ class FileClass():
                     if s3.upload_file():
                         flash('File successfully uploaded', 'success')
                         image_url = s3.get_s3_url()
+                        print(image_url)
                         if not self.user_db.save_img_url_to_db(image_url):
                             flash('Failed to save image URL to the database', 'error')
                         username = session.get('username')
